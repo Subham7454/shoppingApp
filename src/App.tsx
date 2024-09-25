@@ -8,10 +8,12 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 //screens
 import Home from './screens/Home';
 import Details from './screens/Details';
+import Checkout from './screens/Checkout';
 
 export type RootStackPramsList = {
   Home: undefined;
   Details: {product: Product};
+  Checkout: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackPramsList>();
@@ -28,6 +30,11 @@ const App = () => {
           name="Details"
           component={Details}
           options={{title: 'product details'}}
+        />
+        <Stack.Screen
+          name="Checkout"
+          component={Checkout}
+          options={{title: 'Select A payment meathod'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
